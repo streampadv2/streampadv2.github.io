@@ -1,0 +1,94 @@
+<settings>
+	<assets>
+		<!-- ##### The only skinable asset is the equalizer, which is not being used yet. #######-->
+		<!-- ##### Other assets can be made skinable, but the main SWF file will need to be modified and recompiled. #######-->
+		
+		<!--The play button -->
+		<play>/sp/fs/btn_play.swf</play>
+		<!--The pause button -->
+		<pause>/sp/fs/btn_pause.swf</pause>
+		<!--The close button -->
+		<close>/sp/fs/btn_close.swf</close>
+		<!--The next button -->
+		<next>/sp/fs/btn_next.swf</next>
+		<!--The previous button -->
+		<previous>/sp/fs/btn_previous.swf</previous>
+		<!--The playlist button -->
+		<playlist>/sp/fs/btn_playlist.swf</playlist>
+		<!--The swf containing many of the player's skin items: i.e. textfields, scrollbar, playlist item, default album artwork, volume button -->
+		<skin>/sp/fs/player_skin.swf</skin>
+		<!--These are the equalizer swf files (which implement the IEqualizer interface) that serve as sound graphical visualizers. Currently only the 1st one is the one equalizer that is being used.-->
+		<equalizers>
+			<equalizer label="Equalizer 1">/sp/fs/Equalizer1.swf</equalizer>
+			<equalizer label="Equalizer 2">/sp/fs/Equalizer1.swf</equalizer>
+		</equalizers>
+	</assets>
+	<ui>
+		<!-- The vertical spacing between the center and the navigational items-->
+		<spacingNavY>22</spacingNavY>
+		<!-- The vertical spacing between the center and the buddy alert-->
+		<spacingBuddyY>154</spacingBuddyY>
+		<!-- The horizontal spacing between the logo and items to the right-->
+		<spacingLogoX>33</spacingLogoX>
+		<!-- The horizontal spacing between each of the player buttons (play/pause, next, previous)-->
+		<spacingPlayerX>6</spacingPlayerX>
+		<!-- The horizontal spacing between progress bar and the duration textfield -->
+		<spacingDurationX>3</spacingDurationX>
+		<!-- The vertical spacing between the buy button and the thing above the buy button -->
+		<spacingBuyY>10</spacingBuyY>
+		<!-- The horizontal spacing between the volume and the other elements -->
+		<spacingVolumeX>10</spacingVolumeX>
+		<!-- The vertical spacing between the center and the album artwork -->
+		<spacingAlbumY>47</spacingAlbumY>
+		<!-- The horizontal spacing between the album artwork and the song's text -->
+		<spacingAlbumTextX>40</spacingAlbumTextX>
+		<!-- The vertical spacing between the song's textfields -->
+		<spacingTextY>-4</spacingTextY>
+		<!-- The vertical spacing between the song's textfields and the progress bar -->
+		<spacingProgressY>27</spacingProgressY>
+		
+		
+		<!--This is the color of the background -->
+		<bgcolor>262425</bgcolor>
+		<!--This is the alpha of the background image -->
+		<bgAlpha>0</bgAlpha>
+		
+		<!-- The time delay (in milliseconds) that the tool tip is displayed. -->
+		<tipDelay>300</tipDelay>
+		<!-- The Color of the font of the tool tip  -->
+		<tipColorFont>EBE9E9</tipColorFont>
+		<!-- The Color of the background of the tool tip   -->
+		<tipColorBack>1A1919</tipColorBack>
+		<!-- The Color of the border of the tool tip   -->
+		<tipColorBorder>1A1919</tipColorBorder>
+		
+		<!-- The Color of the playback of the fullscreen play bar  -->
+		<barColorFront>5691A5</barColorFront>
+		<!-- The Color of the loading of the fullscreen play bar  -->
+		<barColorBack>1C1B1B</barColorBack>
+		<!-- The Color of the border of the fullscreen play bar  -->
+		<barColorBorder>242424</barColorBorder>
+		<!-- The Height of the fullscreen play bar  -->
+		<barHeight>6</barHeight>
+		<!-- The Width of the fullscreen play bar  -->
+		<barWidth>245</barWidth>
+		<!--This is the number of milliseconds before the navigation disappears during inactivity -->
+		<mouseDelay>7000</mouseDelay>
+		<!--This is the color of all of the text of the player. If none is supplied, then the color is supplied by the SWF files. -->
+		<fontColor>FFFFFF</fontColor>		
+		<!--This is the color behind the navigation and the text to help highlight those items. -->
+		<highlightColor>000000</highlightColor>
+		<!--This is the alpha of the navigation/text background highlight area. -->
+		<highlightAlpha>0</highlightAlpha>
+		<!-- the number of milliseconds that the buddy alert waits to display -->
+		<buddyDisplayDelay>2000</buddyDisplayDelay>
+		<!-- the number of milliseconds that the buddy alert waits to hide -->
+		<buddyHideDelay>9000</buddyHideDelay>
+		<!-- the number of milliseconds that it takes the buddy alert to display -->
+		<buddyDisplayTime>1.5</buddyDisplayTime>
+		<!-- the number of milliseconds that it takes the buddy alert to hide -->
+		<buddyHideTime>.5</buddyHideTime>
+		
+		<!--<text><![CDATA[enter text here.]]></text>-->
+	</ui>
+ </settings>
