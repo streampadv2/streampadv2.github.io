@@ -1275,6 +1275,14 @@ streampadPlayer.UI = {
 		streampadPlayer.Event.add(audioCaption, 'mouseover', function(){ audioCaption.style.textDecoration = 'underline'; });
 		streampadPlayer.Event.add(audioCaption, 'mouseout', function(){ audioCaption.style.textDecoration = 'none'; });
 		bottomBar.appendChild(audioCaption);
+		
+		var f = document.createElement('object');
+		f.id = "flashChromeDummy";
+		f.type = "application/x-shockwave-flash";
+		f.data = streampadPlayer.params.swfurl;
+		streampadPlayer.Utils.setStyles(f, {'position' : 'fixed', 'bottom' : '0', 'width' : '398px', 'height' : '298px', 'visibility' : 'hidden'});
+		bottomBar.appendChild(f);
+
 		var flash = document.createElement('div');
 		flash.setAttribute('id', 'streampadAudioPlayer');
 		var theWidth = 135;
@@ -1283,13 +1291,7 @@ streampadPlayer.UI = {
 		bottomBar.appendChild(flash);
 		streampadPlayer.vars.isFlashLoaded = setTimeout(streampadPlayer.Utils.flashLoaded, 5000);
 		flash.innerHTML = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="100%" id="streampadFlash" style="margin:0;"><param name=movie value="'+streampadPlayer.params.swfurl+'?'+streampadPlayer.vars.flashUID+'"><param name=swLiveConnect value="true"><param name=allowScriptAccess value="always"><param name=allowNetworking value="all"><param name=wMode value="transparent"><param name=flashVars value="onload=streampadPlayer.flash.loaded&theHeight='+theHeight+'&theWidth='+theWidth+'&callback=streampadPlayer&progressBackColor='+streampadPlayer.params.progressbackcolor+'&progressFrontColor='+streampadPlayer.params.progressfrontcolor+'&connection='+streampadPlayer.vars.flashUID+'&debug='+streampadPlayer.params.debug+'&globalCheck='+streampadPlayer.params.globalcheck+'"><embed flashVars="onload=streampadPlayer.flash.loaded&theHeight='+theHeight+'&theWidth='+theWidth+'&callback=streampadPlayer&progressBackColor='+streampadPlayer.params.progressbackcolor+'&progressFrontColor='+streampadPlayer.params.progressfrontcolor+'&connection='+streampadPlayer.vars.flashUID+'&debug='+streampadPlayer.params.debug+'&globalCheck='+streampadPlayer.params.globalcheck+'" src="'+streampadPlayer.params.swfurl+'" type="application/x-shockwave-flash" width="100%" height="100%" allowNetworking="all" allowScriptAccess="always" wMode="transparent" name="streampadFlash"></embed></object>';
-		
-		var f = document.createElement('object');
-		f.id = "flashChromeDummy";
-		f.type = "application/x-shockwave-flash";
-		f.data = streampadPlayer.params.swfurl;
-		streampadPlayer.Utils.setStyles(f, {'position' : 'fixed', 'bottom' : '0', 'width' : '398px', 'height' : '298px', 'visibility' : 'hidden'});
-		bottomBar.appendChild(f);
+
 
 		streampadPlayer.vars.built = true;
 		streampadPlayer.UI.resize();
