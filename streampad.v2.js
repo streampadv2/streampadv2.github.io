@@ -2643,7 +2643,7 @@ streampadPlayer.flash = {
     },
     /* called from Flash when the swf is initially loaded */
     loaded : function(volume, sn, drawersize, majorVersion){
-	setTimeout(function(){$sp('#flashChromeDummy').remove()}, 10000);
+	//setTimeout(function(){$sp('#flashChromeDummy').remove()}, 10000);
     	window.clearTimeout(streampadPlayer.vars.isFlashLoaded);
     	streampadPlayer.flash.majorVersion = majorVersion;
     	if (streampadPlayer.vars.clientLogin == true){
