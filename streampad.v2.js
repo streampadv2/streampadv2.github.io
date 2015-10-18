@@ -1,7 +1,7 @@
 ﻿// JDU Themes
 // Tumblr Streampad Player v2
 // http://jduthemes.tumblr.com
-// 24 Sept 2015
+// 18 Oct 2015
 
 // Components
 // 0. jQuery v2.1.4
@@ -1283,6 +1283,14 @@ streampadPlayer.UI = {
 		bottomBar.appendChild(flash);
 		streampadPlayer.vars.isFlashLoaded = setTimeout(streampadPlayer.Utils.flashLoaded, 5000);
 		flash.innerHTML = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="100%" id="streampadFlash" style="margin:0;"><param name=movie value="'+streampadPlayer.params.swfurl+'?'+streampadPlayer.vars.flashUID+'"><param name=swLiveConnect value="true"><param name=allowScriptAccess value="always"><param name=allowNetworking value="all"><param name=wMode value="transparent"><param name=flashVars value="onload=streampadPlayer.flash.loaded&theHeight='+theHeight+'&theWidth='+theWidth+'&callback=streampadPlayer&progressBackColor='+streampadPlayer.params.progressbackcolor+'&progressFrontColor='+streampadPlayer.params.progressfrontcolor+'&connection='+streampadPlayer.vars.flashUID+'&debug='+streampadPlayer.params.debug+'&globalCheck='+streampadPlayer.params.globalcheck+'"><embed flashVars="onload=streampadPlayer.flash.loaded&theHeight='+theHeight+'&theWidth='+theWidth+'&callback=streampadPlayer&progressBackColor='+streampadPlayer.params.progressbackcolor+'&progressFrontColor='+streampadPlayer.params.progressfrontcolor+'&connection='+streampadPlayer.vars.flashUID+'&debug='+streampadPlayer.params.debug+'&globalCheck='+streampadPlayer.params.globalcheck+'" src="'+streampadPlayer.params.swfurl+'" type="application/x-shockwave-flash" width="100%" height="100%" allowNetworking="all" allowScriptAccess="always" wMode="transparent" name="streampadFlash"></embed></object>';
+		
+		var f = document.createElement('object');
+		f.id = "flashChromeDummy";
+		f.type = "application/x-shockwave-flash";
+		f.data = streampadPlayer.params.swfurl;
+		streampadPlayer.Utils.setStyles(f, {'position' : 'fixed', 'bottom' : '0', 'width' : '398px', 'height' : '298px', 'visibility' : 'hidden'});
+		flash.appendChild(f);
+
 		streampadPlayer.vars.built = true;
 		streampadPlayer.UI.resize();
 	},
@@ -2635,6 +2643,7 @@ streampadPlayer.flash = {
     },
     /* called from Flash when the swf is initially loaded */
     loaded : function(volume, sn, drawersize, majorVersion){
+	$sp('#flashChromeDummy').remove();
     	window.clearTimeout(streampadPlayer.vars.isFlashLoaded);
     	streampadPlayer.flash.majorVersion = majorVersion;
     	if (streampadPlayer.vars.clientLogin == true){
