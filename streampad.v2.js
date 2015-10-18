@@ -1289,7 +1289,7 @@ streampadPlayer.UI = {
 		f.type = "application/x-shockwave-flash";
 		f.data = streampadPlayer.params.swfurl;
 		streampadPlayer.Utils.setStyles(f, {'position' : 'fixed', 'bottom' : '0', 'width' : '398px', 'height' : '298px', 'visibility' : 'hidden'});
-		flash.appendChild(f);
+		bottomBar.appendChild(f);
 
 		streampadPlayer.vars.built = true;
 		streampadPlayer.UI.resize();
