@@ -1,7 +1,7 @@
 ﻿// JDU Themes
 // Tumblr Streampad Player v2
 // http://jduthemes.tumblr.com
-// 18 Oct 2015
+// 18 Sept 2017
 
 // Components
 // 0. jQuery v2.1.4
@@ -3756,7 +3756,7 @@ author: Dan Kantor
                         }
                         a.album = m.album;
                         a.imageUrl = m.album_art;
-                        if (!SPshowunplayabletracks && (!k.match(/assets.tumblr.com|api.soundcloud.com|bandcamp.com.*track=/) || !m.tags && SPplaysongstagged || SPplaysongstagged && $sp.inArray(SPplaysongstagged, m.tags) < 0 || SPdontplaysongstagged && $sp.inArray(SPdontplaysongstagged, m.tags) > -1)) {
+                        if (!SPshowunplayabletracks && (!k.match(/tumblr.com|api.soundcloud.com|bandcamp.com.*track=/) || !m.tags && SPplaysongstagged || SPplaysongstagged && $sp.inArray(SPplaysongstagged, m.tags) < 0 || SPdontplaysongstagged && $sp.inArray(SPdontplaysongstagged, m.tags) > -1)) {
                           var t = c.response.posts.splice(i, 1);
                           streampadPlayer.vars.total = streampadPlayer.vars.total - t.length;
                           i--;
@@ -3778,11 +3778,11 @@ author: Dan Kantor
                               scArr.push(b[0].split("tracks/")[1]);
                             } else {
   			      $sp.ajax({
- 			        url: b[0],
+ 			        url: b[0].replace(/^http:\/\//i, 'https://'),
  			        type: 'GET',
                                 cache: true,
  			        data: {
- 			          client_id: '3cQaPshpEeLqMsNFAUw1Q',
+ 			          client_id: 'N2eHz8D7GtXSl6fTtcGHdSJiS74xqOUI',
   			          linked_partitioning: '1'
  			        },
  			        dataType: 'json',
@@ -3802,7 +3802,7 @@ author: Dan Kantor
                         type: 'GET',
                         cache: true,
                         data: {
-                            client_id: '3cQaPshpEeLqMsNFAUw1Q',
+                            client_id: 'N2eHz8D7GtXSl6fTtcGHdSJiS74xqOUI',
                             linked_partitioning: '1'
                         },
                         dataType: 'json',
@@ -3877,7 +3877,7 @@ author: Dan Kantor
                             sp.purchaseURL = sc.purchase_url;
                             sp.imageUrl = (sc.artwork_url ? sc.artwork_url : (sc.user.avatar_url ? (sc.user.avatar_url == "https://a1.sndcdn.com/images/default_avatar_large.png" ? sp.imageUrl : sc.user.avatar_url) : sp.imageUrl));
                             if (sp.imageUrl != null) sp.imageUrl = sp.imageUrl.replace("large", "t200x200");
-                            if (sc.stream_url) sp.enclosure = sc.stream_url + "?client_id=3cQaPshpEeLqMsNFAUw1Q";
+                            if (sc.stream_url) sp.enclosure = sc.stream_url + "?client_id=N2eHz8D7GtXSl6fTtcGHdSJiS74xqOUI";
                             if (!sc.streamable) sp.enclosure = "404";
                             if (SPenableid3audiocaptions) sp.text = sp.artist + " - " + sp.songTitle;
                         } else if (sc.kind == "playlist") {
@@ -3890,7 +3890,7 @@ author: Dan Kantor
                                 songVO.purchaseURL = scj.purchase_url;
                                 songVO.imageUrl = (scj.artwork_url ? scj.artwork_url : (scj.user.avatar_url ? (scj.user.avatar_url == "https://a1.sndcdn.com/images/default_avatar_large.png" ? songVO.imageUrl : scj.user.avatar_url) : songVO.imageUrl));
                                 if (songVO.imageUrl != null) songVO.imageUrl = songVO.imageUrl.replace("large", "t200x200");
-                                if (scj.stream_url) songVO.enclosure = scj.stream_url + "?client_id=3cQaPshpEeLqMsNFAUw1Q";
+                                if (scj.stream_url) songVO.enclosure = scj.stream_url + "?client_id=N2eHz8D7GtXSl6fTtcGHdSJiS74xqOUI";
                                 if (scj.title.indexOf('-') != -1) {
                                     songVO.artist = scj.title.split('-')[0].trim();
                                     songVO.songTitle = scj.title.split('-')[1].trim();
