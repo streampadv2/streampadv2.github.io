@@ -1,7 +1,7 @@
 ﻿// JDU Themes
 // Tumblr Streampad Player v2
 // http://jduthemes.tumblr.com
-// 18 Sept 2017
+// 17 Jan 2019
 
 // Components
 // 0. jQuery v2.1.4
@@ -3724,6 +3724,12 @@ author: Dan Kantor
                         var m = c.response.posts[i];
                         var k = m.player;
                     	var a = new streampadPlayer.SongVO();
+                        if (k == undefined) {
+                            var t = c.response.posts.splice(i, 1);
+                            streampadPlayer.vars.total = streampadPlayer.vars.total - t.length;
+                            i--;
+                            continue;
+                        }
                         a.id3artist = m.artist;
                         a.id3title = m.track_name;
                         if (SPenableid3audiocaptions === "true") {
